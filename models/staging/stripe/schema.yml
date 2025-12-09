@@ -1,6 +1,6 @@
 sources:
   - name: raw      # <-- ce nom est utilisé dans dbt
-    database: biq-query-artefact
+    # database: biq-query-artefact
     schema: dbt_learning
     tables:
       - name: raw_payments
