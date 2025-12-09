@@ -1,16 +1,68 @@
-Welcome to your new dbt project!
+# README.md
 
-### Using the starter project
+# Projet DBT : dbt_learning
 
-Try running the following commands:
-- dbt run
-- dbt test
+Ce projet dbt contient des modèles pour **Carrefour (US)** et **Jaffle Shop (EU)**, organisés en **staging** et **mart**.
+Il vous faudra adapter le profile.yml que voici et le champ schema des schempa.yml
+
+---
+
+## Arborescence du projet
+
+```
+dbt_learning/
+│
+├─ models/
+│   ├─ staging/
+│   │   ├─ carrefour/
+│   │   └─ jaffle_shop/
+│   └─ mart/
+│       ├─ carrefour/
+│       └─ jaffle_shop/
+```
+
+---
+
+## Profils BigQuery
+
+Fichier `profiles.yml` :
+
+```yaml
+dbt_learning:
+  target: us   # target par défaut
+  outputs:
+
+    us:
+      type: bigquery
+      method: service-account
+      project: berf-rzf-erg #your project gcp id
+      dataset: dbt_intro #your dataset bq
+      location: US
+      keyfile: path/to/json.json # your path to credentials
+
+    eu:
+      type: bigquery
+      method: service-account
+      project: berf-rzf-erg #your project gcp id
+      dataset: dbt_learning #your dataset bq
+      location: EU
+      keyfile: path/to/json.json # your path to credentials
+```
 
 
-### Resources:
-- Learn more about dbt [in the docs](https://docs.getdbt.com/docs/introduction)
-- Check out [Discourse](https://discourse.getdbt.com/) for commonly asked questions and answers
-- Join the [chat](https://community.getdbt.com/) on Slack for live discussions and support
-- Find [dbt events](https://events.getdbt.com) near you
-- Check out [the blog](https://blog.getdbt.com/) for the latest news on dbt's development and best practices
-# dbt-learning
+---
+
+## 2 Localisation Donc 2 Commandes d’exécution
+
+### 1. Modèles Carrefour (US)
+
+```bash
+dbt run --target us --select staging.carrefour+
+```
+
+### 1. Modèles jaffle_shop (EU)
+
+```bash
+dbt run --target eu --select staging.jaffle_shop+
+```
+
