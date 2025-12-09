@@ -2,7 +2,7 @@ version: 2
 
 sources:
   - name: raw
-    database: biq-query-artefact   # le project_id BigQuery réel
+    # database: biq-query-artefact   # le project_id BigQuery réel
     schema: dbt_learning          # le dataset BigQuery contenant tes tables
     tables:
       - name: raw_customers
