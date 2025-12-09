@@ -1,0 +1,5 @@
+sources:
+  - name: carrefour
+    schema: carrefour_start
+    tables:
+      - name: crf_sales_group_data
