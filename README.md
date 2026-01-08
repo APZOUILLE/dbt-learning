@@ -21,7 +21,9 @@ dbt_learning/
 │       └─ jaffle_shop/
 ```
 ## Installer Packages
+```shell
 dbt deps
+```
 
 ---
 
