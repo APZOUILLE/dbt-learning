@@ -20,6 +20,8 @@ dbt_learning/
 │       ├─ carrefour/
 │       └─ jaffle_shop/
 ```
+## Installer Packages
+dbt deps
 
 ---
 
