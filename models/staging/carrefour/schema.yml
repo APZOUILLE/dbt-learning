@@ -3,6 +3,20 @@ sources:
     schema: carrefour_start
     tables:
       - name: crf_hyp_sales_fr_data
+        columns:
+          - name: CA
+            tests:
+              - dbt_utils.accepted_range:
+                  min_value: 0
       - name: crf_prx_sales_fr_data
+        columns:
+          - name: CA
+            tests:
+              - dbt_utils.accepted_range:
+                  min_value: 0
       - name: crf_sup_sales_fr_data
-      - name: ferrero_sales_per_week_dirty
+        columns:
+          - name: CA
+            tests:
+              - dbt_utils.accepted_range:
+                  min_value: 0
