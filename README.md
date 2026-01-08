@@ -3,7 +3,7 @@
 # Projet DBT : dbt_learning
 
 Ce projet dbt contient des modèles pour **Carrefour (US)** et **Jaffle Shop (EU)**, organisés en **staging** et **mart**.
-Il vous faudra adapter le profile.yml que voici et le champ schema des schempa.yml
+Il vous faudra adapter le profile.yml que voici et le champ schema des schema.yml
 
 ---
 
